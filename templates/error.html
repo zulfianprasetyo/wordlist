@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Error</title>
+  </head>
+  <link href="{{ url_for('static', filename='mystyle.css') }}" rel="stylesheet" />
+  <body>
+    <div class="wrap">
+      <div class="banner" onclick="window.location.href='/';"></div>
+
+      <div class="search-box d-flex justify-content-center">
+        <div class="search-box d-flex justify-content-center">
+		 
+		<div class="error-box">
+		  <h1>Error</h1>
+          <p>{{ msg }}</p>
+          {% if suggestions %}
+          <p>Anda mungkin mencari salah satu kata berikut:</p>
+          <ul>
+            {% for suggestion in suggestions %}
+            <li><a href="/detail/{{ suggestion }}">{{ suggestion }}</a></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+		</div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

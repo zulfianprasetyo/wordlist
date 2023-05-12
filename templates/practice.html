@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script>
+         $(document).ready(function() {
+            let api_key = 'f7eacc6d-e1b2-470a-8b61-13e0b89b0ec3';
+            let word = 'voluminous';
+            let url = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${api_key}`
+            $.ajax({
+                type: 'GET',
+                url: url,
+                data: {},
+                success: function(response) {
+                    console.log(response);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
